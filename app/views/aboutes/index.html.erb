@@ -1,0 +1,25 @@
+<% provide(:title, 'О нас') %>
+
+<% content_for :description do %>
+Учредителями Государственного казенного учреждения «Единый социальный расчетный центр» являются Министерство социальной защиты населения Забайкальского края и Департамент государственного имущества и земельных отношений Забайкальского края
+<% end %>
+
+<div class="hero-unit center">
+
+     <% @aboute.each do |aboute| %>
+     <%= aboute.text.html_safe %>
+            <% if sign_in_admin? || sign_in_editor? %>
+            <%= link_to 'Редактировать', edit_aboute_path(aboute) %>
+            <%= link_to 'Удалить', aboute_path(aboute),
+                    method: :delete, data: { confirm: 'Вы уверены?' } %>
+            <% end %> 
+      <% end %>
+
+<% if sign_in_admin? || sign_in_editor? %>
+<%= link_to 'Новая статья', new_aboute_path %>
+<% end %>
+</br>
+
+<%= link_to image_tag("/images/main_office.jpg", alt: "ГКУ Единый социальный расчетный центр Забайкальского края", :width => 700, :height => 500), '#' %>
+
+</div>

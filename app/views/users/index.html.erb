@@ -1,0 +1,25 @@
+<% provide(:title, 'Новости') %>
+
+<div class="hero-unit center">
+  <div class="blok">
+    <center><p style="color:white;">Пользователи</p></center>
+  </div>
+
+  <table>
+    <% @users.each do |user| %>
+      <%= link_to user.name, user_path(user), class: "href" %>
+
+        <% if sign_in_admin? || sign_in_editor? %>
+          <%= link_to '  Редактировать ', edit_user_path(user) %>
+          <%= link_to '  Удалить', user_path(user),
+              method: :delete, data: { confirm: 'Вы уверены?' } %>
+        <% end %>
+        <tr></tr><br>
+    <% end %>
+
+  <% if sign_in_admin? || sign_in_editor? %>
+    <p><%= link_to 'Новая статья', new_user_path %></p>
+  <% end %>
+  </table>
+
+</div>

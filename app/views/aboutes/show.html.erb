@@ -1,0 +1,10 @@
+<div class="hero-unit center">
+<p>
+  <%= @aboute.text.html_safe %>
+</p>
+<br>
+<%= link_to 'Назад', aboutes_path %>
+  <% if current_user && (sign_in_editor? || sign_in_admin?) %>
+<%= link_to 'Редактировать', edit_aboute_path(@aboute) %>
+<% end %>
+</div>

@@ -1,0 +1,21 @@
+<% provide(:title, 'Редактирование статьи') %>
+<div class="center hero-unit">
+<%= form_for :servicetext, url: servicetext_path(@servicetext), method: :patch do |f| %>
+  <% if @servicetext.errors.any? %>
+  <div id="error_explanation">
+    <h2> Статя не может быть сохранена из-за следующих <%= pluralize(@servicetext.errors.count, "ошибок")%>: </h2>
+    <ul>
+    <% @servicetext.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+   <%= f.label :"Заголовок" %>
+   <%= f.cktext_area :title%>
+   <%= f.label :"Текст" %>
+   <%= f.cktext_area :text %>
+   <%= f.submit :"Сохранить"%>
+<% end %>
+<%= link_to 'Назад', servicetexts_path(params[:format]) %>
+</div>

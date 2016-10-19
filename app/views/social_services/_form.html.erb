@@ -1,0 +1,18 @@
+<%= form_for(@social_service) do |f| %>
+  <% if @social_service.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@social_service.errors.count, "error") %> prohibited this social_service from being saved:</h2>
+
+      <ul>
+      <% @social_service.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.cktext_area :name, :ckeditor => {:height => '50'} %>
+  <div class="actions">
+    <%= f.submit :"Сохранить" %>
+  </div>
+<% end %>

@@ -1,0 +1,24 @@
+<% provide(:title, 'Социальная защита населения') %>
+<% content_for :description do %>
+  <%= meta_description(@content.name) %>
+<% end %>
+
+<div class="hero-unit center">
+ <div class="row">
+  <ul id="nav_list_first" class="nav_list">
+    
+    <p>
+    <% @social_service_posts.each do |post| %>
+      <li><a href="#"><%= post.title.html_safe %></a>
+        <ul><li><a href="#"><%= post.text.html_safe %></a></li></ul>
+      </li>
+    <% end %>
+  </ul>
+  </p>
+  <% if sign_in_admin? || sign_in_editor? %>
+    <%= link_to 'Добавить', new_social_post_path(id: @social_service) %>
+    <%= link_to 'Редактировать', social_posts_path(id: @social_service) %>
+  <% end %>
+  <%= link_to 'Назад', social_services_path %>
+  </div>
+</div>

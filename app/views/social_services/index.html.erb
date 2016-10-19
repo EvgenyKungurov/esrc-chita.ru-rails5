@@ -1,0 +1,23 @@
+<% provide(:title, 'Социальная защита населения') %>
+<div class="hero-unit center">
+  <div class="row">
+    <div class="alert alert-success" role="alert"><h3 class="center_align">Социальная защита населения</h3></div>
+  </div>
+  <p id="notice"><%= notice %></p>
+    <table>
+      <% @social_services.each do |social_service| %>
+        <tr>
+          <td><%= link_to social_service.name.html_safe, social_service %></td>
+          <% if sign_in_admin? || sign_in_editor? %>
+            <td><p><%= link_to 'Редактировать', edit_social_service_path(social_service) %></p></td>
+            <td><p><%= link_to 'Удалить', social_service, method: :delete, data: { confirm: 'Вы уверены, что хотите удалить?' } %></p>
+            </td>
+          <% end %>
+        </tr>
+      <% end %>
+    </table>
+    <br>
+    <% if sign_in_admin? || sign_in_editor? %>
+      <%= link_to 'Добавить', new_social_service_path %>
+    <% end %>
+</div>

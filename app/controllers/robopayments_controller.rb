@@ -1,0 +1,2 @@
+class RobopaymentsController < ApplicationController
+end

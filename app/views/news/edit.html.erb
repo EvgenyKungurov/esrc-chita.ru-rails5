@@ -1,0 +1,26 @@
+<% provide(:title, 'Редактирование статьи') %>
+<div class="center hero-unit">
+<%= form_for :service, url: service_path(@service), method: :patch do |f| %>
+  <% if @service.errors.any? %>
+  <div id="error_explanation">
+    <h2> Статя не может быть сохранена из-за следующих <%= pluralize(@service.errors.count, "ошибок")%>: </h2>
+    <ul>
+    <% @service.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <p>
+     <center style="color:blue;"><%= f.label :"Заголовок" %></center><br>
+    <%= f.cktext_area :title, :ckeditor => {:uiColor => '#0076cc'} %>
+  </p>
+   <p>
+    <%= f.cktext_area :text, :ckeditor => {:uiColor => '#0076cc'} %>
+   </p>
+   <p>
+    <%= f.submit :"Сохранить"%>
+  </p>
+<% end %>
+<%= link_to 'Назад', services_path %>
+</div>

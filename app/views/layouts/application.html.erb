@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= full_title(yield(:title)) %></title>
+    <%= csrf_meta_tags %>
+    <%= render 'layouts/shim' %>
+    <%= favicon_link_tag 'favicon.ico' %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="description" content= "<%= yield :description %>" >
+    <meta name="keywords" content="ЕСРЦ,есрц,соцзащита,социальная,защита,населения,население">
+    <meta name='yandex-verification' content='534f05ae85bf77bb' />
+    <meta name="google-site-verification" content="eksqpgH6QxLEVcn4JhOcgdQz5Yxx56pe_tm4XGOTUsM" />
+    <meta name='wmail-verification' content='e43236287ebbad71' />
+  </head>
+
+  <body>
+    <%= render 'layouts/header' %>
+      <div class="container">
+        <% flash.each do |key, value| %>
+          <div class="alert alert-key"><%= value %></div>
+        <% end %>
+        <%= yield %>
+      </div>
+    
+    <center><%= render 'layouts/footer' %></center>
+  </body>
+</html>

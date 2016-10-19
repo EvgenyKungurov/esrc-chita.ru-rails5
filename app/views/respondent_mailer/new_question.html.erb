@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Новый вопрос задал <%= @user.name %></h1>
+    <p>
+      Дата вопроса:  <%= @user.answerposts.last.created_at.strftime("%H:%M %d-%m-%Y") %>
+    </p>
+    <p>
+      <h2>Вопрос:</h2><br>
+      <%= @user.answerposts.last.text %>
+    </p>
+  </body>
+</html>

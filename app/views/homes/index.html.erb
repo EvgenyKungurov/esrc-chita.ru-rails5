@@ -1,0 +1,24 @@
+<% provide(:title, 'Главная') %>
+
+<% content_for :description do %>
+ГКУ «Краевой центр социальной защиты населения» осуществляет прием граждан по вопросам предоставления мер социальной поддержки, назначение социальных выплат, субсидии на оплату жилого помещения и коммунальных услуг, все виды пособий гражданам, имеющим  детей и др
+<% end %>
+
+<div class="hero-unit center">
+  <%= render 'layouts/news_home' %>
+  <%= render 'layouts/hello_home' %>
+ <div class="row">
+ <div class="alert alert-warning" role="alert"><h3 class="center_align">Другие порталы</h3></div>
+   <div class="col-md-4 col-sm-6">
+     <%= link_to image_tag("zabzan.jpg", size: "260x62"), 'http://pgu.e-zab.ru/web/guest/main', target: "_blank" %>
+   </div>
+   <div class="col-md-4 col-sm-6">
+     <%= link_to image_tag("gosuslugi.jpg"), 'http://www.gosuslugi.ru', target: "_blank" %>
+   </div>
+   <div class="col-md-4 col-sm-6">
+     <%= link_to image_tag("mydoc.jpg", size: "260x110"), 'http://www.mfc-chita.ru', target: "_blank" %>
+   </div>
+ </div>
+</div>
+
+

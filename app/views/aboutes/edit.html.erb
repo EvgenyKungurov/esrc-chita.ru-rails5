@@ -1,0 +1,18 @@
+<% provide(:title, 'Редактирование статьи') %>
+<div class="center hero-unit">
+<%= form_for :aboute, url: aboute_path(@aboute), method: :patch do |f| %>
+  <% if @aboute.errors.any? %>
+  <div id="error_explanation">
+    <h2> Статя не может быть сохранена из-за следующих <%= pluralize(@aboute.errors.count, "ошибок")%>: </h2>
+    <ul>
+    <% @aboute.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+    <%= f.cktext_area :text %>
+    <%= f.submit :"Сохранить" %>
+<% end %>
+<%= link_to 'Назад', aboutes_path %>
+</div>

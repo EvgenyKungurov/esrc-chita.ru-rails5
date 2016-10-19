@@ -1,0 +1,23 @@
+<% provide(:title, 'Новости') %>
+
+<div class="hero-unit center">
+  <div class="row"><div class="alert alert-success" role="alert"><h3 class="center_align">Лента новостей</h3></div></div>
+
+  <table>
+    <% @article.each do |elem| %>
+      <div class="date"><%= elem.created_at.localtime.strftime("%d-%m-%Y %H:%M") %></div>
+      <%= link_to elem.title.html_safe, article_path(elem), class: "href" %>
+
+        <% if sign_in_admin? || sign_in_editor? %>
+          <%= link_to 'Редактировать ', edit_article_path(elem) %>
+          <%= link_to 'Удалить', article_path(elem),
+              method: :delete, data: { confirm: 'Вы уверены?' } %>
+        <% end %>
+        <tr></tr>
+    <% end %>
+
+  <% if sign_in_admin? || sign_in_editor? %>
+    <p><%= link_to 'Новая статья', new_article_path %></p>
+  <% end %>
+  </table>
+</div>

@@ -1,0 +1,12 @@
+<% provide(:title, 'Филиалы') %>
+<div class="hero-unit center">
+<p>
+  <center style="color:blue;"><%= @filial.title.html_safe %></center>
+  <%= @filial.text.html_safe %>
+</p>
+<br>
+<%= link_to 'Назад', filials_path %>
+  <% if sign_in_admin? || sign_in_editor? %>
+<%= link_to 'Редактировать', edit_filial_path(@filial) %>
+<% end %>
+</div>

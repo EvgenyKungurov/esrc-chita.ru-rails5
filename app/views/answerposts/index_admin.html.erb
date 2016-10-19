@@ -1,0 +1,25 @@
+<div class="hero-unit center">
+  <table id="answerlist">
+    <% @answerpost.each do |post| %>
+      <% if post.text.size > 40 %>
+      <td><%= link_to post.text[0, 40].html_safe << "...", answerpost_path(post) %></td>
+      <% else %>
+
+      <td><%= link_to post.text.html_safe, answerpost_path(post) %></td>
+      <% end %>
+
+      <td><%= link_to post.user.name, answerpost_path(post) %></td>
+
+      <td><%= link_to post.created_at.strftime("%d/%m/%Y"), answerpost_path(post) %></td>
+
+      <% if current_user && sign_in_admin? %>
+      <td><%= link_to 'Ответить', answer_answerpost_path(post) %></td>
+      <td><%= link_to 'Удалить', answerpost_path(post),
+        method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+      <% elsif current_user && sign_in_respondent? %>
+      <td><%= link_to 'Ответить', answer_answerpost_path(post) %></td>
+      <% end %>   
+      <tr></tr>
+      <% end %>
+  </table>
+</div>

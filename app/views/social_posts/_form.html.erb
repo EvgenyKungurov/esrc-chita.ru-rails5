@@ -1,0 +1,25 @@
+<%= form_for(@social_post) do |f| %>
+  <% if @social_post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@social_post.errors.count, "error") %> prohibited this social_post from being saved:</h2>
+
+      <ul>
+      <% @social_post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <%= f.label :Заголовок, class: :title %>
+    <%= f.cktext_area :title, :ckeditor => {:height => '50'} %>
+
+    <%= f.label :Текст, class: :title %>
+    <%= f.cktext_area :text, :ckeditor => {:height => '50'} %>
+
+    <%= f.hidden_field :social_service_id, :value => params[:id]  %>
+
+  <div class="actions">
+    <%= f.submit :Сохранить %>
+  </div>
+<% end %>

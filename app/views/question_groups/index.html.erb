@@ -1,0 +1,21 @@
+<div class="hero-unit center">
+<p id="notice"><%= notice %></p>
+
+<h1> Все опросы на сайте </h1>
+<table>
+  <tbody>
+    <% @question_groups.each do |question_group| %>
+      <tr>
+        <td><%= question_group.name %></td>
+        <td><%= link_to 'Показать', question_group %></td>
+        <td><%= link_to 'Редактировать', edit_question_group_path(question_group) %></td>
+        <td><%= link_to 'Удалить', question_group, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Новый опрос', new_question_group_path %>
+</div>

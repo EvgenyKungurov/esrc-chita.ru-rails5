@@ -1,0 +1,22 @@
+<% provide(:title, 'Новая статья') %>
+<div class="hero-unit center">
+  <%= form_for :servicetext, url: servicetexts_path do |f| %>
+    <% if @servicetext.errors.any? %>
+      <div id="error_explanation">
+         <h2>статья не может быть сохранена из-за следующих: <%= pluralize(@servicetext.errors.count, "ошибок") %> </h2>
+         <ul>
+         <% @servicetext.errors.full_messages.each do |msg| %>
+         <li><%= msg %></li>
+         </ul>
+    <% end %>
+      </div>
+    <% end %>
+    <%= f.label "Заголовок" %>
+    <%= f.cktext_area :title %>
+    <%= f.label "Текст" %>
+    <%= f.cktext_area :text %>
+    <%= f.hidden_field :service_id, :value => params[:format] %>
+    <%= f.submit :"Сохранить" %>
+    <% end %>
+<%= link_to 'Назад', servicetexts_path %>
+</div>

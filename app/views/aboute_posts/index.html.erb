@@ -1,0 +1,20 @@
+<div class="hero-unit center">
+<p id="notice"><%= notice %></p>
+
+<table>
+  <tbody>
+    <% @aboute_posts.each do |aboute_post| %>
+      <tr>
+        <td><p><%= link_to aboute_post.title.html_safe, aboute_post %></p></td>
+        <% if sign_in_admin? || sign_in_editor? %>
+          <td><p><%= link_to 'Редактировать', edit_aboute_post_path(aboute_post, aboute_id: params[:aboute_id]) %></td></p>
+          <td><p><%= link_to 'Удалить', aboute_post_path(aboute_post, aboute_id: params[:aboute_id]),
+            method: :delete, data: { confirm: 'Вы уверены?' } %></td></p>
+            <%= link_to 'Добавить', new_aboute_post_path(aboute_id: params[:aboute_id]) %>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+</div>

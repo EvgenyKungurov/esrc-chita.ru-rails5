@@ -1,0 +1,27 @@
+<% provide(:title, 'Перечень услуг') %>
+<% content_for :description do %>
+  <%= meta_description(@content.title) %>
+<% end %>
+
+<div class="hero-unit center">
+  <div class="row">
+    <ul id="nav_list_first" class="nav_list">
+
+     <% @service.sort_by {|x| x.created_at }.each do |elem| %>
+        <li><a href="#"><%= elem.title.html_safe %></a>
+          <ul>
+            <li><a href="#"><%= elem.text.html_safe %> </a></li>
+          </ul>
+        </li>
+      <% end %>
+
+   </ul>
+
+  <%= link_to 'Назад', services_path %>
+
+  <% if sign_in_admin? || sign_in_editor? %>
+  <%= link_to 'Добавить запись', new_servicetext_path(params[:id]) %>
+  <%= link_to 'Редактировать', servicetexts_path(params[:id]) %>
+  <% end %>
+  </div>
+</div>

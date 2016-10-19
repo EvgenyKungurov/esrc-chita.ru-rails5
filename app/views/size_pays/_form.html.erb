@@ -1,0 +1,18 @@
+<%= form_for(@size_pay) do |f| %>
+  <% if @size_pay.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@size_pay.errors.count, "error") %> prohibited this size_pay from being saved:</h2>
+
+      <ul>
+      <% @size_pay.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.cktext_area :name, :ckeditor => {:uiColor => '#0076cc'} %>
+  <div class="actions">
+    <%= f.submit :"Сохранить" %>
+  </div>
+<% end %>

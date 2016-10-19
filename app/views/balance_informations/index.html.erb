@@ -1,0 +1,22 @@
+<div class="hero-unit">
+<p id="notice"><%= notice %></p>
+
+<table>
+  <tbody>
+    <% @balance_informations.each do |balance_information| %>
+      <tr>
+        <td><%= link_to balance_information.title.html_safe, balance_information %></td>
+        <% if sign_in_admin? || sign_in_editor? %>
+          <td><%= link_to 'Редактировать', edit_balance_information_path(balance_information) %></td>
+          <td><%= link_to 'Удалить', balance_information, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<% if sign_in_admin? || sign_in_editor? %>
+  <%= link_to 'Новая запись', new_balance_information_path %>
+<% end %>
+</div>

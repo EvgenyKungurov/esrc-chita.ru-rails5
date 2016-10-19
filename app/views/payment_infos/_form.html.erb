@@ -1,0 +1,25 @@
+<%= form_for(@payment_info) do |f| %>
+  <% if @payment_info.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@payment_info.errors.count, "error") %> prohibited this payment_info from being saved:</h2>
+
+      <ul>
+      <% @payment_info.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Заголовок %>
+    <%= f.cktext_area :title %>
+  </div>
+  <div class="field">
+    <%= f.label :Текст %>
+    <%= f.cktext_area :text %>
+  </div>
+  <div class="actions">
+    <%= f.submit :"Создать", class: "btn" %>
+  </div>
+<% end %>

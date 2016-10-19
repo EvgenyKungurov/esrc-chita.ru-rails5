@@ -1,0 +1,14 @@
+<div class="hero-unit center">
+<p>
+  <strong>Заголовок:</strong>
+  <%= @servicetext.title.html_safe %>
+</p>
+<p>
+  <strong>Текст:</strong>
+  <%= @servicetext.text.html_safe %>
+</p>
+<%= link_to 'Назад', servicetexts_path %>
+  <% if current_user && sign_in_admin? %>
+  <%= link_to 'Редактировать', edit_servicetext_path(@servicetext) %> 
+  <% end %>
+</div>

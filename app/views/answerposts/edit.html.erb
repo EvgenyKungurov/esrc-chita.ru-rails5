@@ -1,0 +1,19 @@
+<% provide(:title, 'Редактирование статьи') %>
+<div class="center hero-unit">
+<%= form_for :answerpost, url: answerpost_path(@answerpost), method: :patch do |f| %>
+  <% if @answerpost.errors.any? %>
+  <div id="error_explanation">
+    <h2> Статя не может быть сохранена из-за следующих <%= pluralize(@answerpost.errors.count, "ошибок")%>: </h2>
+    <ul>
+    <% @answerpost.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+    <%= f.label "Текст"%>
+    <%= f.text_field :text %>
+    <%= f.submit :"Сохранить" %>
+<% end %>
+<%= link_to 'Назад', index_admin_answerposts_path %>
+</div>

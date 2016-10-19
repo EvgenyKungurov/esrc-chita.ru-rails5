@@ -1,0 +1,24 @@
+<% provide(:title, 'Новости') %>
+<div class="hero-unit center">
+<div class="blok">
+<p>Архив новостей</p><div></div><div></div>
+</div>
+<table>
+  
+  <% @new.sort.in_groups_of(3, false) do |new| %>
+    <% new.each do |elem| %>
+       <td style="width:400px;"><%= link_to  elem.title.html_safe,  new_path(elem), class: "href" %>
+                <% if current_user && sign_in_admin? %>
+                <%= link_to 'Редактировать', edit_new_path(elem) %>
+                <%= link_to 'Удалить', new_path(elem),
+                    method: :delete, data: { confirm: 'Вы уверены?' } %> 
+                <% end %>
+        </td>          
+    <% end %>        
+    <tr></tr>
+  <% end %>
+<% if current_user && sign_in_admin? %>
+<%= link_to 'Новая статья', new_news_path %>
+<% end %>
+</table>
+</div>

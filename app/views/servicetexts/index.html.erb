@@ -1,0 +1,14 @@
+<div class="hero-unit center">
+<table>
+     <% @servicetext.each do |elem| %>
+       <td style="width:900px;"><%= link_to  elem.title.html_safe, servicetext_path(elem), class: "href" %>
+                <% if sign_in_admin? || sign_in_editor? %>
+                <%= link_to 'Редактировать', edit_servicetext_path(elem, params[:format]) %>
+                <%= link_to 'Удалить', servicetext_path(elem),
+                    method: :delete, data: { confirm: 'Вы уверены?' } %> 
+                <% end %>
+        </td> 
+        <tr></tr>         
+    <% end %>        
+</table>
+</div>

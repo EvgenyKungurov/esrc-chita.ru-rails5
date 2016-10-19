@@ -1,0 +1,27 @@
+<% provide(:title, 'Новая статья') %>
+<div class="center hero-unit">
+<%= form_for :article, url: articles_path do |f| %>
+ <% if @article.errors.any? %>
+  <div id="error_explanation">
+    <h2>Статья не сохранена из-за следующих  <%= pluralize(@article.errors.count, "ошибок") %>: </h2>
+    <ul>
+    <% @article.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <p>
+      <%= f.cktext_area :title, :ckeditor => {:uiColor => '#0076cc'} %>
+  </p>
+   <p>
+   <%= f.cktext_area :text, :ckeditor => {:uiColor => '#0076cc'} %>
+  </p>
+   <p>
+   <%= f.submit :"Сохранить" %>
+  </p>
+<% end %>
+<%= link_to 'Назад', articles_path %>
+</div>
+
+  

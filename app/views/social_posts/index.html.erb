@@ -1,0 +1,16 @@
+<div class="hero-unit center">
+<p id="notice"><%= notice %></p>
+<table>
+  <% @social_posts.each do |post| %>
+  <tr>
+    <td><p><%= post.title.html_safe %></p></td>
+    <% if sign_in_admin? || sign_in_editor? %>
+      <td><%= link_to 'Редактировать', edit_social_post_path(post) %></td>
+      <td><%= link_to 'Удалить', social_post_path(post, social_service_id: params[:id]),
+      method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+      <% end %>
+  </tr>
+  <% end %>
+</table>
+<%= link_to 'Назад', social_services_path %>
+</div>

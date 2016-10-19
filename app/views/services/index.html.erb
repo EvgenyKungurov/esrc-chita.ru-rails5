@@ -1,0 +1,18 @@
+<% provide(:title, 'Перечень услуг') %>
+<div class="hero-unit center">
+<table>
+  <div class="row"><div class="alert alert-success" role="alert"><h3 class="center_align">Меры социальной поддержки</h3></div></div>
+  <% @service.each do |elem| %>
+      <td><%= link_to  elem.title.html_safe,  service_path(elem), class: "href" %></td>
+      <% if sign_in_admin? || sign_in_editor? %>
+      <td><%= link_to 'Редактировать', edit_service_path(elem) %></td>
+      <td><%= link_to 'Удалить', service_path(elem),
+          method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+      <% end %>
+      <tr></tr>
+  <% end %>
+<% if sign_in_admin? || sign_in_editor? %>
+   <%= link_to 'Новая статья', new_service_path %>
+<% end %>
+</table>
+</div>

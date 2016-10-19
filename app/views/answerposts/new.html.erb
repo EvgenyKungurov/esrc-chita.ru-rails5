@@ -1,0 +1,21 @@
+<% provide(:title, 'Новая статья') %>
+<div class="hero-unit center">
+    <%= form_for :answerpost, url: answerposts_path do |f| %>
+      <% if @answerpost.errors.any? %>
+              <div id="error_explanation">
+                <h2>статья не может быть сохранена из-за следующих: <%= pluralize(@answerpost.errors.count, "ошибок") %> </h2>
+                <ul>
+                  <% @answerpost.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+                  <% end %>
+                </ul>
+              </div>
+        <% end %>
+      <%= f.label :"Текст" %>
+      <%= f.text_area :text, :size => "30x10" %>
+      <%= f.submit :"Отправить", class: "btn" %>
+      <% end %>
+<%= link_to 'Назад', answerposts_path %>
+</div>
+
+     

@@ -1,0 +1,27 @@
+<% provide(:title, "Редактирование профиля") %>
+<div class="center hero-unit">
+<h1>Обновление профиля</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@user) do |f| %>
+      <%= render 'layouts/validates_users_errors' %>
+
+      <%= f.label :Имя %>
+      <%= f.text_field :name %>
+
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+
+      <%= f.label :Пароль %>
+      <%= f.password_field :password %>
+
+      <%= f.label :password_confirmation, "Повторите пароль" %>
+      <%= f.password_field :password_confirmation %>
+
+      <%= f.submit "Сохранить изменения", class: "btn btn-large btn-primary" %>
+    <% end %>
+    <%= link_to 'Назад', user_path(@user) %>
+  </div>
+</div>
+</div>

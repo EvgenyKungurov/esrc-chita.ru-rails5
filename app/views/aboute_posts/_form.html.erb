@@ -1,0 +1,28 @@
+<%= form_for(@aboute_post) do |f| %>
+  <% if @aboute_post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@aboute_post.errors.count, "error") %> prohibited this aboute_post from being saved:</h2>
+
+      <ul>
+      <% @aboute_post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Заголовок, class: :title %>
+    <%= f.cktext_area :title, :ckeditor => {:height => '50'} %>
+  </div>
+  <div class="field">
+    <%= f.label :Текст, class: :title %>
+    <%= f.cktext_area :text, :ckeditor => {:height => '50'} %>
+  </div>
+  <div class="field">
+    <%= f.hidden_field :aboute_id, :value => params[:aboute_id] %>
+  </div>
+  <div class="actions">
+    <%= f.submit :Сохранить%>
+  </div>
+<% end %>

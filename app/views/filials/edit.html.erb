@@ -1,0 +1,26 @@
+<% provide(:title, 'Редактирование статьи') %>
+<div class="center hero-unit">
+<%= form_for :filial, url: filial_path(@filial), method: :patch do |f| %>
+  <% if @filial.errors.any? %>
+  <div id="error_explanation">
+    <h2> Статя не может быть сохранена из-за следующих <%= pluralize(@filial.errors.count, "ошибок")%>: </h2>
+    <ul>
+    <% @filial.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <p>
+     <center style="color:blue;"><%= f.label :Заголовок %></center><br>
+    <%= f.cktext_area :title %>
+  </p>
+   <p>
+    <%= f.cktext_area :text %>
+  </p>
+   <p>
+    <%= f.submit :"Сохранить" %>
+  </p>
+<% end %>
+<%= link_to 'Назад', filials_path %>
+</div>

@@ -1,0 +1,24 @@
+[ 2015-03-25 17:51:22.0944 32066/7f9a6aabe7e0 age/Wat/Main.cpp:1264 ]: Starting PassengerAgent watchdog...
+[ 2015-03-25 17:51:22.1038 32069/7f58e7d007e0 age/Hel/Main.cpp:891 ]: Starting PassengerAgent server...
+[ 2015-03-25 17:51:22.1040 32069/7f58e7d007e0 age/Hel/Main.cpp:234 ]: PassengerAgent server running in multi-application mode.
+[ 2015-03-25 17:51:22.1073 32069/7f58e7d007e0 age/Hel/Main.cpp:645 ]: PassengerAgent server online, PID 32069
+[ 2015-03-25 17:51:22.1141 32077/7f4553f347e0 age/Log/Main.cpp:439 ]: Starting PassengerAgent logger...
+[ 2015-03-25 17:51:22.1152 32077/7f4553f347e0 age/Log/Main.cpp:320 ]: PassengerAgent logger online, PID 32077
+2015/03/25 17:51:24 [error] 32085#0: *4 "/home/rails/site_esrc/public/public/index.html" is not found (2: No such file or directory), client: 127.0.0.1, server: _, request: "HEAD / HTTP/1.1", host: "0.0.0.0"
+2015/03/25 17:52:00 [error] 32085#0: *9 "/home/rails/site_esrc/public/public/index.html" is not found (2: No such file or directory), client: 192.168.45.22, server: _, request: "GET / HTTP/1.1", host: "192.168.45.108:3000"
+2015/03/25 17:52:04 [error] 32085#0: *9 "/home/rails/site_esrc/public/public/index.html" is not found (2: No such file or directory), client: 192.168.45.22, server: _, request: "GET / HTTP/1.1", host: "192.168.45.108:3000"
+2015/03/25 17:52:06 [error] 32085#0: *9 "/home/rails/site_esrc/public/public/index.html" is not found (2: No such file or directory), client: 192.168.45.22, server: _, request: "GET / HTTP/1.1", host: "192.168.45.108:3000"
+2015/03/25 17:52:07 [error] 32085#0: *9 "/home/rails/site_esrc/public/public/index.html" is not found (2: No such file or directory), client: 192.168.45.22, server: _, request: "GET / HTTP/1.1", host: "192.168.45.108:3000"
+2015/03/25 17:52:07 [error] 32085#0: *9 "/home/rails/site_esrc/public/public/index.html" is not found (2: No such file or directory), client: 192.168.45.22, server: _, request: "GET / HTTP/1.1", host: "192.168.45.108:3000"
+
+[ 2015-03-25 17:52:15.9534 32077/7f4553ca3700 age/Log/Main.cpp:346 ]: Signal received. Gracefully shutting down... (send signal 2 more time(s) to force shutdown)
+[ 2015-03-25 17:52:15.9535 32077/7f4553f347e0 age/Log/Main.cpp:408 ]: Received command to shutdown gracefully. Waiting until all clients have disconnected...
+[ 2015-03-25 17:52:15.9536 32077/7f4553ca3700 Ser/Server.h:455 ]: [LoggerAdminServer] Shutdown finished
+[ 2015-03-25 17:52:15.9537 32077/7f4553f347e0 age/Log/Main.cpp:433 ]: PassengerAgent logger shutdown finished
+
+[ 2015-03-25 17:52:15.9542 32069/7f58e7c7c700 age/Hel/Main.cpp:455 ]: Signal received. Gracefully shutting down... (send signal 2 more time(s) to force shutdown)
+[ 2015-03-25 17:52:15.9542 32069/7f58e7d007e0 age/Hel/Main.cpp:814 ]: Received command to shutdown gracefully. Waiting until all clients have disconnected...
+[ 2015-03-25 17:52:15.9543 32069/7f58e727b700 Ser/Server.h:455 ]: [ServerThr.2] Shutdown finished
+[ 2015-03-25 17:52:15.9545 32069/7f58e687a700 Ser/Server.h:455 ]: [AdminServer] Shutdown finished
+[ 2015-03-25 17:52:15.9545 32069/7f58e7c7c700 Ser/Server.h:455 ]: [ServerThr.1] Shutdown finished
+[ 2015-03-25 17:52:15.9654 32069/7f58e7d007e0 age/Hel/Main.cpp:876 ]: PassengerAgent server shutdown finished

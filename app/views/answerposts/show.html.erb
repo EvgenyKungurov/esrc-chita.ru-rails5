@@ -1,0 +1,16 @@
+<div class="hero-unit center">
+Ворос
+  <div id="answerbox"><%= @answerpost.text.html_safe %></div>
+Ответ
+  <div id="answerbox">
+  <%= "Ваш вопрос еще обрабатывается" if @answerpost.answer.nil? || @answerpost.answer.size == 0 %>  
+  <%= @answerpost.answer.html_safe if !@answerpost.answer.nil? %>
+  </div>
+</p>
+<br>
+  <%= link_to 'Назад к вашим вопросам', answerposts_path %><br>
+  <%= link_to 'Назад ко всем вопросам', index_admin_answerposts_path if current_user && sign_in_respondent? %>
+  <% if current_user && sign_in_admin? %>
+  <%= link_to 'Редактировать', edit_answerpost_path(@answerpost) %>
+  <% end %>
+</div>

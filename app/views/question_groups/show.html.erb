@@ -1,0 +1,12 @@
+<div class="hero-unit center">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Опрос:</strong>
+  <%= @question_group.name %>
+</p>
+<% if sign_in_admin? || sign_in_editor? %>
+  <%= link_to 'Редактировать', edit_question_group_path(@question_group) %> |
+  <%= link_to 'Назад', question_groups_path %>
+<% end %>
+</div>

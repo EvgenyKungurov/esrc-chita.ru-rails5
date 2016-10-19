@@ -1,0 +1,2 @@
+<% pay_url = Robokassa.client.init_payment_url(order.id, order.amount, "Order #{order}", '', 'ru', order.user.email, {}) %>
+<%= link_to "Оплатить через сервис ROBOX", pay_url %>

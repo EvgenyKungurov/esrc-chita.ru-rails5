@@ -1,0 +1,63 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="navbar-inner">
+        <div class="container">
+
+        <%= image_tag("logo2.png", class: "img_logo") %>
+         <div id="logo">
+           Государственное Казенное Учреждение <br>
+            Краевой центр социальной защиты населения Забайкальского края
+         </div>
+
+          <nav>
+            <ul class="nav navbar-nav">
+              <li><%= link_to "Главная", root_path %></li>
+              <li><%= link_to "Структурные подразделения", filials_path  %></li>
+
+              <li id="fat-menu" class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Перечень услуг <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><%= link_to 'Меры социальной поддержки', services_path %></li>
+                  <li><%= link_to 'Социальная защита населения', social_services_path %></li>
+                  <li><%= link_to 'Размеры социальных выплат', size_pays_path %></li>
+                </ul>
+              </li>
+
+              <li id="fat-menu" class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Информация <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><%= link_to 'Информация о выплатах', payment_infos_path %></li>
+                  <li><%= link_to "Новости", articles_path %></li>
+                </ul>
+              </li>
+
+              <li><%= link_to "Электронные услуги", aboute_path(5) %></li>
+
+              <li id="fat-menu" class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">О нас <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><%= link_to 'ГКУ "КЦСЗН"', aboute_path(3) %></li>
+                  <li><%= link_to 'Данные об учреждении', 'http://bus.gov.ru/pub/info-card/75926', target: "_blank" %></li>
+                  <li><%= link_to "Противодействие коррупции", aboute_path(2) %></li>
+                  <li><%= link_to 'Политика обработки персональных данных', aboute_path(6) %></li>
+                </ul>
+              </li>
+
+              <% if sign_in? %>
+                <li id="fat-menu" class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Личный кабинет<b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><%= link_to "Профиль", current_user %></li>
+                    <li><%= link_to "Вопросы и ответы", answerposts_path %></li>
+                    <li class="divider"></li>
+                    <li><%= link_to "Выход", signout_path, method: "delete" %></li>
+                  </ul>
+                </li>
+              <% else %>
+                <%= link_to "Вход", signin_path, class: "btn btn-success" %>
+                <%= link_to "Регистрация", signup_path, class: "btn btn-success" %>
+              <% end %>
+            </ul>
+          </nav>
+        </div>
+      </div>
+</header>

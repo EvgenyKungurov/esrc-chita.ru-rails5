@@ -1,0 +1,19 @@
+<% provide(:title, 'Филиалы') %>
+<div class="hero-unit center">
+<table>
+  <% @filial.sort.each do |element| %>
+     <td><%= link_to element.title.html_safe, filial_path(element), class: "href"  %>
+            <% if sign_in_admin? || sign_in_editor? %>
+            <%= link_to 'Редактировать', edit_filial_path(element) %>
+            <%= link_to 'Удалить', filial_path(element),
+                    method: :delete, data: { confirm: 'Вы уверены?' } %>
+            <% end %>
+            <hr/>
+      </td>   
+      <tr></tr>
+  <% end %>
+</table>
+  <% if sign_in_admin? || sign_in_editor? %>
+<%= link_to 'Новая статья', new_filial_path %>
+<% end %>
+</div>
