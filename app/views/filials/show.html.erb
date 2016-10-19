@@ -5,8 +5,4 @@
   <%= @filial.text.html_safe %>
 </p>
 <br>
-<%= link_to 'Назад', filials_path %>
-  <% if sign_in_admin? || sign_in_editor? %>
-<%= link_to 'Редактировать', edit_filial_path(@filial) %>
-<% end %>
 </div>

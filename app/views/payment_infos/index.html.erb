@@ -9,20 +9,8 @@
       <tr>
         <div class="date"><%= payment_info.created_at.localtime.strftime("%d-%m-%Y %H:%M") %></div>
         <%= link_to payment_info.title.html_safe, payment_info_path(payment_info), class: "href" %>
-
-        <% if sign_in_admin? || sign_in_editor? %>
-          <%= link_to 'Редактировать ', edit_payment_info_path(payment_info) %>
-          <%= link_to 'Удалить', payment_info, method: :delete, data: { confirm: 'Вы уверены?' } %>
-        <% end %>
-
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-<% if sign_in_admin? || sign_in_editor? %>
-  <%= link_to 'Создать', new_payment_info_path %>
-<% end %>
-
 </div>

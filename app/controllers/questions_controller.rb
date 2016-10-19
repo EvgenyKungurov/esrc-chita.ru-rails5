@@ -35,11 +35,12 @@ class QuestionsController < ApplicationController
   end
 
   private
-    def set_question
-      @question = Question.find(params[:id])
-    end
 
-    def question_params
-      params.require(:question).permit(:type, :question_text, :position, :answer_options, :validation_rules)
-    end
+  def set_question
+    @question = Question.find(params[:id])
+  end
+
+  def question_params
+    params.require(:question).permit(:type, :question_text, :position, :answer_options, :validation_rules)
+  end
 end

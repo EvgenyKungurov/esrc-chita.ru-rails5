@@ -1,0 +1,33 @@
+<div class="center hero-unit">
+   <div class="row"><div class="alert alert-success" role="alert"><h3 class="center_align">Вход на сайт</h3></div></div>
+<div class="center-block">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+     <%= error_messages %>
+      <div class="field">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true %>
+      </div>
+
+      <div class="field">
+        <%= f.label :Пароль %><br />
+        <%= f.password_field :password, autocomplete: "off" %>
+      </div>
+
+      <% if devise_mapping.rememberable? -%>
+        <div class="field">
+          <%= f.label 'Запомнить меня' %>
+          <%= f.check_box :remember_me %>
+        </div>
+      <% end -%>
+
+      <div class="actions">
+        <%= f.submit "Войти", class: 'btn btn-success' %>
+      </div>
+  <% end %>
+
+  <%= render "users/shared/links" %>
+  </div>
+</div>
+
+</div>

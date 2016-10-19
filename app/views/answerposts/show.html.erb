@@ -8,9 +8,5 @@
   </div>
 </p>
 <br>
-  <%= link_to 'Назад к вашим вопросам', answerposts_path %><br>
-  <%= link_to 'Назад ко всем вопросам', index_admin_answerposts_path if current_user && sign_in_respondent? %>
-  <% if current_user && sign_in_admin? %>
-  <%= link_to 'Редактировать', edit_answerpost_path(@answerpost) %>
-  <% end %>
+  <%= link_to 'Назад к вашим вопросам', answerposts_path %>
 </div>

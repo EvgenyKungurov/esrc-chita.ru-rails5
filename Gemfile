@@ -9,6 +9,12 @@ gem 'puma', '~> 3.0'
 gem 'ckeditor', github: 'galetahub/ckeditor'
 # Use Kaminari for pagination
 gem 'kaminari'
+# Use for authentication
+gem 'devise'
+# Use Rails Admin
+gem 'rails_admin', '~> 1.0'
+# Use for authorization
+gem 'rolify'
 # Use Bootstrap for UI CSS
 gem 'bootstrap-sass'
 # Use PostgreSQL database

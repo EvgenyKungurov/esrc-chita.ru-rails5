@@ -10,20 +10,11 @@
      <% end %>
 
      <td><%= link_to post.created_at.strftime("%d/%m/%Y"), answerpost_path(post) %></td>
-         <% if current_user && sign_in? %>
-     <td><%= link_to 'Редактировать', edit_answerpost_path(post) %></td>
-     <td><%= link_to 'Удалить', answerpost_path(post),
-                      method: :delete, data: { confirm: 'Вы уверены?' } %></td>
-         <% end %> 
       <tr></tr>      
       <% end %>
   </table>     
-
-  <% if current_user &&  sign_in_admin? || sign_in_respondent? %></br> 
-    <%= link_to 'Посмотреть все вопросы', index_admin_answerposts_path %>  
-  <% end %>
 	
-	<% if current_user && sign_in? %></br>
-	  <%= link_to 'Задать вопрос', new_answerpost_path, class: "btn" %>
+	<% if user_signed_in? %></br>
+	  <%= link_to 'Задать вопрос', new_answerpost_path, class: "btn btn-success" %>
 	<% end %>
 </div>

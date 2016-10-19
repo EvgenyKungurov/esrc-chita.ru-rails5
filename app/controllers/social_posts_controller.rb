@@ -1,6 +1,6 @@
 class SocialPostsController < ApplicationController
   before_action :set_social_post, only: [:show, :edit, :update, :destroy]
-  before_action :sign_in_admin, only: [:new, :create, :update, :destroy]
+  before_action :can_do_it?, only: [:new, :create, :update, :destroy]
 
   def index
     @social_posts = SocialPost.where(social_service_id: params[:id].to_i)
@@ -38,15 +38,12 @@ class SocialPostsController < ApplicationController
   end
 
   private
-    def set_social_post
-      @social_post = SocialPost.find(params[:id])
-    end
 
-    def sign_in_admin
-      redirect_to root_url, notice: "Страница не найдена" unless sign_in_admin? || sign_in_editor?
-    end
+  def set_social_post
+    @social_post = SocialPost.find(params[:id])
+  end
 
-    def social_post_params
-      params.require(:social_post).permit(:title, :text, :social_service_id)
-    end
+  def social_post_params
+    params.require(:social_post).permit(:title, :text, :social_service_id)
+  end
 end

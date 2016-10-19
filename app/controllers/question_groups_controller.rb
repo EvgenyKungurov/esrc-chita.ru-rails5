@@ -29,11 +29,12 @@ class QuestionGroupsController < ApplicationController
   end
 
   private
-    def set_question_group
-      @question_group = QuestionGroup.find(params[:id])
-    end
 
-    def question_group_params
-      params.require(:question_group).permit(:name)
-    end
+  def set_question_group
+    @question_group = QuestionGroup.find(params[:id])
+  end
+
+  def question_group_params
+    params.require(:question_group).permit(:name)
+  end
 end

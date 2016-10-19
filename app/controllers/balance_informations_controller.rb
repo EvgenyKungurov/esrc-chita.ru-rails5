@@ -1,6 +1,6 @@
 class BalanceInformationsController < ApplicationController
   before_action :set_balance_information, only: [:show, :edit, :update, :destroy]
-  before_action :sign_in_admin, except: [:show, :index]
+  before_action :can_do_it?, except: [:show, :index]
 
   def index
     @balance_informations = BalanceInformation.all
@@ -38,15 +38,12 @@ class BalanceInformationsController < ApplicationController
   end
 
   private
-    def set_balance_information
-      @balance_information = BalanceInformation.find(params[:id])
-    end
 
-    def balance_information_params
-      params.require(:balance_information).permit(:title, :content)
-    end
+  def set_balance_information
+    @balance_information = BalanceInformation.find(params[:id])
+  end
 
-    def sign_in_admin
-      redirect_to root_url, notice: "Страница не найдена" unless sign_in_admin? || sign_in_editor?
-    end
+  def balance_information_params
+    params.require(:balance_information).permit(:title, :content)
+  end
 end

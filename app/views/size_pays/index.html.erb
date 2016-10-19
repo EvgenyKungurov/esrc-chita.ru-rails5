@@ -12,17 +12,8 @@
     <% @size_pays.each do |size_pay| %>
       <tr>
         <td><%= size_pay.name.html_safe %></td>
-        <% if sign_in_admin? || sign_in_editor? %>
-          <td><%= link_to 'Редактировать', edit_size_pay_path(size_pay) %></td>
-          <td><%= link_to 'Удалить', size_pay, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-<% if sign_in_admin? || sign_in_editor? %>
-  <%= link_to 'Добавить', new_size_pay_path %>
-<% end %>  
 </div>

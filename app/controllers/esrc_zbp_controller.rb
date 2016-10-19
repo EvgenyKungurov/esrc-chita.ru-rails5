@@ -4,5 +4,4 @@ class EsrcZbpController < ApplicationController
 
   def contacts
   end
-  
 end

@@ -1,6 +1,6 @@
 class AboutePostsController < ApplicationController
   before_action :set_aboute_post, only: [:show, :edit, :update, :destroy]
-  before_action :sign_in_admin, only: [:create, :edit, :update, :destroy]
+  before_action :can_do_it?, except: [:index, :show]
 
   def index
     @aboute_posts = AboutePost.where(aboute_id: params[:aboute_id].to_i)
@@ -38,15 +38,12 @@ class AboutePostsController < ApplicationController
   end
 
   private
-    def set_aboute_post
-      @aboute_post = AboutePost.find(params[:id])
-    end
 
-    def aboute_post_params
-      params.require(:aboute_post).permit(:title, :text, :aboute_id)
-    end
+  def set_aboute_post
+    @aboute_post = AboutePost.find(params[:id])
+  end
 
-    def sign_in_admin
-      redirect_to root_url, notice: "Страница не найдена" unless sign_in_admin? || sign_in_editor?
-  	end
+  def aboute_post_params
+    params.require(:aboute_post).permit(:title, :text, :aboute_id)
+  end
 end

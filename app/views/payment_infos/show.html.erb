@@ -3,9 +3,4 @@
 <div class="hero-unit center">
 <div class="row"><div class="alert alert-success" role="alert"><h3 class="center_align"><%= @payment_info.title.html_safe %></h3></div><p id="notice"><%= notice %></p></div>
 <p><%= @payment_info.text.html_safe %></p>
-
-<% if sign_in_admin? || sign_in_editor? %>
-  <%= link_to 'Редактировать', edit_payment_info_path(@payment_info) %> |
-  <%= link_to 'Назад', payment_infos_path %>
-<% end %>
 </div>

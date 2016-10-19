@@ -1,5 +1,5 @@
 class HomesController < ApplicationController
-  before_action :sign_in_admin, only: [:edit, :update, :destroy]
+  before_action :can_do_it?, only: [:edit, :update, :destroy]
 
   def new
     @article = Article.new
@@ -39,17 +39,11 @@ class HomesController < ApplicationController
 
   def robots
     render text: 'robots'
-    # robots = File.read(Rails.root + 'config/robots.#{Rails.env}.txt')
-    # render :text => robots, :layout => false, :content_type => 'text/plain'
   end
 
   private
 
   def article_params
     params.require(:article).permit(:title, :text)
-  end
-
-  def sign_in_admin
-    redirect_to root_url, notice: 'Страница не найдена' unless sign_in_admin?
   end
 end

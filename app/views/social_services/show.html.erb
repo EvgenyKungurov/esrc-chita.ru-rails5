@@ -15,10 +15,6 @@
     <% end %>
   </ul>
   </p>
-  <% if sign_in_admin? || sign_in_editor? %>
-    <%= link_to 'Добавить', new_social_post_path(id: @social_service) %>
-    <%= link_to 'Редактировать', social_posts_path(id: @social_service) %>
-  <% end %>
   <%= link_to 'Назад', social_services_path %>
   </div>
 </div>

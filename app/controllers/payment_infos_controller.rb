@@ -1,5 +1,6 @@
 class PaymentInfosController < ApplicationController
   before_action :set_payment_info, only: [:show, :edit, :update, :destroy]
+  before_action :can_do_it?, except: [:show, :index]
 
   def index
     @payment_infos = PaymentInfo.all.reverse
