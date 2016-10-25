@@ -1,3 +1,0 @@
-class RobokassaController < ApplicationController
-
-end
