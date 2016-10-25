@@ -16,19 +16,11 @@ class AnswerpostsController < ApplicationController
   end
 
   def edit
-    @answerpost = if current_user.has_role? :admin
-                    Answerpost.find(params[:id])
-                  else
-                    current_user.answerposts.find(params[:id])
-                  end
+    @answerpost = current_user.answerposts.find(params[:id])
   end
 
   def show
-    @answerpost = if current_user.has_role? :admin || :respondent
-                    Answerpost.find(params[:id])
-                  else
-                    current_user.answerposts.find(params[:id])
-                  end
+    @answerpost = current_user.answerposts.find(params[:id])
   end
 
   def index
