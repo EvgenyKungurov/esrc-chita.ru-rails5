@@ -53,7 +53,7 @@ class AnswerpostsController < ApplicationController
   private
 
   def belongs_to_user?
-    redirect_to root_path unless current_user.answerposts.find(params[:id])
+    redirect_to root_path unless current_user.answerposts.map(&:id).include? params[:id]
   end
 
   def answerpost_params
