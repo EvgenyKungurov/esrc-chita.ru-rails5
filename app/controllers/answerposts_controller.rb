@@ -1,5 +1,6 @@
 class AnswerpostsController < ApplicationController
   before_action :can_do_it?, only: [:index_admin, :answer, :destroy]
+  before_action :belongs_to_user?, only: [:edit, :show]
 
   def new
     @answerpost = Answerpost.new
@@ -50,6 +51,10 @@ class AnswerpostsController < ApplicationController
   end
 
   private
+
+  def belongs_to_user?
+    redirect_to root_path unless current_user.answerposts.find(params[:id])
+  end
 
   def answerpost_params
     params.require(:answerpost).permit(:title, :text, :answer)
