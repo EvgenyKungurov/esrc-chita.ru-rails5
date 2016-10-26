@@ -90,7 +90,7 @@ RailsAdmin.config do |config|
       field :text, :ck_editor
       field :service_id, :enum do
         enum do
-          Service.all.map { |el| [el.title, el.id ] }
+          Service.all.map { |el| [el.title, el.id] }
         end
       end
     end
