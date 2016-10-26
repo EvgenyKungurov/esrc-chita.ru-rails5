@@ -1,6 +1,6 @@
 class SocialServicesController < ApplicationController
   before_action :set_social_service, only: [:show, :edit, :update, :destroy]
-  before_action :can_do_it?, only: [:new, :create, :update, :destroy]
+  before_action :can_do_it?, except: [:index, :show]
 
   def index
     @social_services = SocialService.all

@@ -1,5 +1,5 @@
 class HomesController < ApplicationController
-  before_action :can_do_it?, only: [:edit, :update, :destroy]
+  before_action :can_do_it?, except: [:index, :show]
 
   def new
     @article = Article.new

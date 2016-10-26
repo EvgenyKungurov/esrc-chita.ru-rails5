@@ -1,6 +1,6 @@
 class SizePaysController < ApplicationController
   before_action :set_size_pay, only: [:show, :edit, :update, :destroy]
-  before_action :can_do_it?, only: [:edit, :update, :destroy, :new]
+  before_action :can_do_it?, except: [:index, :show]
 
   def index
     @size_pays = SizePay.all

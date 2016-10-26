@@ -1,5 +1,4 @@
 RailsAdmin.config do |config|
-
   ### Popular gems integration
 
   ## == Devise ==
@@ -8,12 +7,8 @@ RailsAdmin.config do |config|
   end
   config.current_user_method(&:current_user)
 
-  config.authorize_with do
-    redirect_to main_app.root_path unless current_user.has_role? :admin
-  end
-
   ## == Cancan ==
-  # config.authorize_with :cancan
+  config.authorize_with :cancan, UserAbility
 
   ## == Pundit ==
   # config.authorize_with :pundit
@@ -41,5 +36,83 @@ RailsAdmin.config do |config|
     ## With an audit adapter, you can add:
     # history_index
     # history_show
+  end
+
+  config.model Answerpost do
+    edit do
+      exclude_fields :user, :title
+    end
+  end
+
+  config.model Aboute do
+    edit do
+      field :text, :ck_editor
+      exclude_fields :aboute_posts
+    end
+  end
+
+  config.model Article do
+    edit do
+      field :title
+      field :text, :ck_editor
+    end
+  end
+
+  config.model Filial do
+    edit do
+      field :title, :ck_editor
+      field :text, :ck_editor
+    end
+  end
+
+  config.model PaymentInfo do
+    edit do
+      field :title
+      field :text, :ck_editor
+    end
+  end
+
+  config.model Service do
+    edit do
+      field :title
+      field :position
+      field :type_service, :enum do
+        enum_method do
+          :type_service
+        end
+      end
+    end
+  end
+
+  config.model Servicetext do
+    edit do
+      field :title
+      field :text, :ck_editor
+      field :service_id, :enum do
+        enum do
+          Service.all.map { |el| [el.title, el.id ] }
+        end
+      end
+    end
+  end
+
+  config.model SizePay do
+    edit do
+      field :name, :ck_editor
+    end
+  end
+
+  config.model SocialService do
+    edit do
+      field :name
+    end
+  end
+
+  config.model SocialPost do
+    edit do
+      field :title
+      field :text, :ck_editor
+      field :social_service
+    end
   end
 end

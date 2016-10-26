@@ -1,5 +1,5 @@
 class ServicesController < ApplicationController
-  before_action :can_do_it?, only: [:edit, :update, :destroy, :new]
+  before_action :can_do_it?, except: [:index, :show]
 
   def new
     @service = Service.new

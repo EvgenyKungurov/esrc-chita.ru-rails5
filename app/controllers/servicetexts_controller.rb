@@ -1,5 +1,5 @@
 class ServicetextsController < ApplicationController
-  before_action :can_do_it?, only: [:edit, :update, :destroy, :new]
+  before_action :can_do_it?,  xcept: [:index, :show]
 
   def new
     @servicetext = Servicetext.new

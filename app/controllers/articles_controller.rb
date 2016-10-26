@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :can_do_it?, only: [:create, :edit, :update, :destroy]
+  before_action :can_do_it?, except: [:index, :show]
 
   def new
     @article = Article.new

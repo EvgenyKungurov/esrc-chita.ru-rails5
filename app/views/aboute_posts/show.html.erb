@@ -1,10 +1,5 @@
 <div class="hero-unit center">
-
 <p>
   <%= @aboute_post.text.html_safe %>
 </p>
-<% if sign_in_admin? || sign_in_editor? %>
-  <%= link_to 'Редактировать', edit_aboute_post_path(@aboute_post) %> |
-  <%= link_to 'Назад', aboute_posts_path(aboute_id: @aboute_post.aboute_id) %>
-<% end %>
 </div>

@@ -1,6 +1,6 @@
 class SocialPostsController < ApplicationController
   before_action :set_social_post, only: [:show, :edit, :update, :destroy]
-  before_action :can_do_it?, only: [:new, :create, :update, :destroy]
+  before_action :can_do_it?, except: [:index, :show]
 
   def index
     @social_posts = SocialPost.where(social_service_id: params[:id].to_i)
