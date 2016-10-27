@@ -4,7 +4,7 @@
     <div class="alert alert-success" role="alert"><h3 class="center_align">Социальная защита населения</h3></div>
   </div>
   <p id="notice"><%= notice %></p>
-    <table>
+    <table class="table">
       <% @social_services.each do |social_service| %>
         <tr>
           <td><%= link_to social_service.name.html_safe, social_service %></td>
