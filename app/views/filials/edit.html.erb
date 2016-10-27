@@ -1,5 +1,4 @@
 <% provide(:title, 'Редактирование статьи') %>
-<div class="center hero-unit">
 <%= form_for :filial, url: filial_path(@filial), method: :patch do |f| %>
   <% if @filial.errors.any? %>
   <div id="error_explanation">
@@ -23,4 +22,4 @@
   </p>
 <% end %>
 <%= link_to 'Назад', filials_path %>
-</div>
+

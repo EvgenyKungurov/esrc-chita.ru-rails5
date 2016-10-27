@@ -1,5 +1,4 @@
 <% provide(:title, 'Ответ на вопрос') %>
-<div class="center hero-unit">
 <%= form_for :answerpost, url: answerpost_path(@answerpost), method: :patch do |f| %>
   <% if @answerpost.errors.any? %>
   <div id="error_explanation">
@@ -22,4 +21,3 @@
   <% if current_user && sign_in_admin? %>
 <%= link_to 'Редактировать', edit_answerpost_path(@answerpost) %>
 <% end %>
-</div>

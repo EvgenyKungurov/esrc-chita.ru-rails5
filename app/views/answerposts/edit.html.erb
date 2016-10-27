@@ -1,5 +1,4 @@
 <% provide(:title, 'Редактирование статьи') %>
-<div class="center hero-unit">
 <%= form_for :answerpost, url: answerpost_path(@answerpost), method: :patch do |f| %>
   <% if @answerpost.errors.any? %>
   <div id="error_explanation">
@@ -16,4 +15,4 @@
     <%= f.submit :"Сохранить" %>
 <% end %>
 <%= link_to 'Назад', index_admin_answerposts_path %>
-</div>
+

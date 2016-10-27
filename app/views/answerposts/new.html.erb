@@ -1,5 +1,4 @@
 <% provide(:title, 'Новая статья') %>
-<div class="hero-unit center">
     <%= form_for :answerpost, url: answerposts_path do |f| %>
       <% if @answerpost.errors.any? %>
               <div id="error_explanation">
@@ -16,6 +15,6 @@
       <%= f.submit :"Отправить", class: "btn btn-success" %>
       <% end %>
 <%= link_to 'Назад', answerposts_path %>
-</div>
+
 
      

@@ -1,5 +1,4 @@
 <% provide(:title, 'Личный кабинет') %>
-<div class="hero-unit center">
    <table id="answerlist">
      <% @answerpost.each do |post| %>
 
@@ -17,4 +16,3 @@
 	<% if user_signed_in? %></br>
 	  <%= link_to 'Задать вопрос', new_answerpost_path, class: "btn btn-success" %>
 	<% end %>
-</div>

@@ -1,5 +1,4 @@
 <% provide(:title, 'Новая статья') %>
-<div class="hero-unit center">
 <%= form_for :aboute, url: aboutes_path do |f| %>
  <% if @aboute.errors.any? %>
   <div id="error_explanation">
@@ -17,4 +16,3 @@
   <%= f.submit :"Сохранить" %>
 <% end %>
 <%= link_to 'Назад', aboutes_path %>
-</div>

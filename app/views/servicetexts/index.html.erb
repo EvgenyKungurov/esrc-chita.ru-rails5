@@ -1,8 +1,6 @@
-<div class="hero-unit center">
 <table>
   <% @servicetext.each do |elem| %>
     <td style="width:900px;"><%= link_to  elem.title.html_safe, servicetext_path(elem), class: "href" %></td> 
         <tr></tr>         
    <% end %>        
 </table>
-</div>

@@ -1,5 +1,5 @@
 <% provide(:title, 'Новая статья') %>
-<div class="hero-unit center">
+
 <%= form_for :filial, url: filials_path do |f| %>
  <% if @filial.errors.any? %>
   <div id="error_explanation">
@@ -12,23 +12,10 @@
   </div>
   <p>
     <% end %>
-
     <%= f.label :Заголовок, :class => "comments"  %><br>
     <%= f.text_field :title, :class => "comments"  %>
-
-  </p>
-  
-  <p>
-    
-  </p>
- 
+  </p> 
   <%= f.cktext_area :text, :ckeditor => {:uiColor => '#0076cc'} %>
     <%= f.submit :"Сохранить" %>
-  
-
 <% end %>
-
-	
-
 <%= link_to 'Назад', filials_path %>
-</div>

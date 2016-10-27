@@ -1,5 +1,4 @@
 <% provide(:title, 'Новая статья') %>
-<div class="hero-unit center">
   <%= form_for :servicetext, url: servicetexts_path do |f| %>
     <% if @servicetext.errors.any? %>
       <div id="error_explanation">
@@ -19,4 +18,3 @@
     <%= f.submit :"Сохранить" %>
     <% end %>
 <%= link_to 'Назад', servicetexts_path %>
-</div>

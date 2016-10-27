@@ -1,5 +1,4 @@
 <% provide(:title, 'Редактирование статьи') %>
-<div class="center hero-unit">
 <%= form_for :service, url: service_path(@service), method: :patch do |f| %>
   <% if @service.errors.any? %>
   <div id="error_explanation">
@@ -20,4 +19,3 @@
       <%= f.submit :"Сохранить" %>
 <% end %>
 <%= link_to 'Назад', services_path %>
-</div>

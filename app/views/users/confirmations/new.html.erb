@@ -1,5 +1,4 @@
-<div class="center hero-unit">
-   <div class="row"><div class="alert alert-success" role="alert"><h3 class="center_align">Отправить инструкцию</h3></div></div>
+<div class="row"><div class="alert alert-success" role="alert"><h3 class="center_align">Отправить инструкцию</h3></div></div>
 
 <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
   <%= devise_error_messages! %>
@@ -15,4 +14,3 @@
 <% end %>
 
 <%= render "users/shared/links" %>
-</div>

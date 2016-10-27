@@ -3,7 +3,6 @@
   <%= meta_description(@content.title) %>
 <% end %>
 
-<div class="hero-unit center">
   <div class="row">
     <ul id="nav_list_first" class="nav_list">
      <% @service.sort_by {|x| x.created_at }.each do |elem| %>
@@ -16,4 +15,4 @@
    </ul>
   <%= link_to 'Назад', services_path %>
   </div>
-</div>
+
