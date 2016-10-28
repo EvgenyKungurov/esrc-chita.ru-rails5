@@ -39,7 +39,7 @@ class UserAbility
     elsif user.has_role? :editor
       can :access, :rails_admin
       can :dashboard
-      can :manage, [Aboute, AboutePost, Answerpost, Filial, New,
+      can :manage, [Aboute, AboutePost, Answerpost, Filial,
                     PaymentInfo, Service, Servicetext,
                     SizePay, SocialPost, SocialService]
     end
