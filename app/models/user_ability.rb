@@ -40,7 +40,7 @@ class UserAbility
       can :access, :rails_admin
       can :dashboard
       can :manage, [Article, Aboute, AboutePost, Answerpost, Filial,
-                    PaymentInfo, Service, Servicetext,
+                    PaymentInfo, Service, Servicetext, Document,
                     SizePay, SocialPost, SocialService]
     end
   end

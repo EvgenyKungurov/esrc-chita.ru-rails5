@@ -1,0 +1,10 @@
+<% provide(:title, 'Документы') %>
+
+<div class="row"><div class="alert alert-success" role="alert"><h3 class="center_align">Документы</h3></div></div>
+
+<table>
+  <% @documents.each do |doc| %>
+    <%= link_to doc.title.html_safe, document_path(doc), class: "href" %>
+    <tr></tr>
+  <% end %>
+</table>

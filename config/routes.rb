@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   resources :payment_infos
   resources :questions
   resources :question_groups
+  resources :documents
 
   get '/googlee92ee49ba651f9de', to: redirect('/googlee92ee49ba651f9de.html')
 

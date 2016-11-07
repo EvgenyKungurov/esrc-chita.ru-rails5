@@ -115,4 +115,11 @@ RailsAdmin.config do |config|
       field :social_service
     end
   end
+
+  config.model Document do
+    edit do
+      field :title
+      field :content, :ck_editor
+    end
+  end
 end

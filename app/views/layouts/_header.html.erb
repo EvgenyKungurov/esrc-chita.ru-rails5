@@ -11,8 +11,7 @@
           <nav>
             <ul class="nav navbar-nav">
               <li><%= link_to "Главная", root_path %></li>
-              <li><%= link_to "Структурные подразделения", filials_path  %></li>
-
+              <li><%= link_to "Документы", documents_path  %></li>
               <li id="fat-menu" class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Перечень услуг <b class="caret"></b></a>
                 <ul class="dropdown-menu">
@@ -36,9 +35,9 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">О нас <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                   <li><%= link_to 'ГКУ "КЦСЗН"', aboute_path(3) %></li>
-                  <li><%= link_to 'Данные об учреждении', 'http://bus.gov.ru/pub/info-card/75926', target: "_blank" %></li>
-                  <li><%= link_to "Противодействие коррупции", aboute_path(2) %></li>
-                  <li><%= link_to 'Политика обработки персональных данных', aboute_path(6) %></li>
+                  <li><%= link_to "Структурные подразделения", filials_path  %></li>
+                  <li><%= link_to 'Данные об учреждении', 'http://bus.gov.ru/pub/info-card/75926', target: "_blank" %>
+                  </li>
                 </ul>
               </li>
 
