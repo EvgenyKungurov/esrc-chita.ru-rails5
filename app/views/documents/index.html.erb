@@ -2,9 +2,9 @@
 
 <div class="row"><div class="alert alert-success" role="alert"><h3 class="center_align">Документы</h3></div></div>
 
-<table>
+<table class="table">
   <% @documents.each do |doc| %>
-    <%= link_to doc.title.html_safe, document_path(doc), class: "href" %>
-    <tr></tr>
+    <tr><td><%= link_to doc.title.html_safe, document_path(doc), class: "href" %></td></tr>
   <% end %>
 </table>
+
