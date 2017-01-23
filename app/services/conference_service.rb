@@ -10,7 +10,7 @@ class ConferenceService
     if current_user && (current_user.has_role? :conference)
       bbb_salt = ENV['BBB_SALT']
       email    = current_user.email
-      query    = "meetingID=ESRC%27s+meeting&fullName=#{email}&password=mp"
+      query    = "meetingID=ESRC%27s+meeting&fullName=#{email}&password=ap"
       checksum_string = "join#{query}#{bbb_salt}"
       checksum = Digest::SHA1.hexdigest checksum_string
       @url = "#{@default_url}#{query}&checksum=#{checksum}"
