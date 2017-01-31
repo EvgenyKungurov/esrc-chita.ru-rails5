@@ -1,0 +1,2 @@
+module RdnsHelper
+end

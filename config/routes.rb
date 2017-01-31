@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   resources :questions
   resources :question_groups
   resources :documents
+  resources :rdns, only: [:create, :show]
 
   get '/googlee92ee49ba651f9de', to: redirect('/googlee92ee49ba651f9de.html')
 
