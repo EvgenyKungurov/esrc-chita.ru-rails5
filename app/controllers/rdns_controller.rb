@@ -1,5 +1,5 @@
 class RdnsController < ApplicationController
-  before_action :validate_token
+  before_action :validate_token, only: [:create]
 
   def create
     @rdns = Domain.find_or_create_by(name: params[:domain])
