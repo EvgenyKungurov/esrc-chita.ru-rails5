@@ -18,7 +18,7 @@ class RdnsController < ApplicationController
     redirect_to root_path unless token == params[:token]
   end
 
-  def tokens
+  def token
     ENV['RDNS']
   end
 end
