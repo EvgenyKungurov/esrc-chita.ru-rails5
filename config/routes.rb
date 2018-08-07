@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   root 'homes#index'
 
   resources :balance_informations
+  resources :information
   resources :aboute_posts
   resources :social_posts
   resources :size_pays

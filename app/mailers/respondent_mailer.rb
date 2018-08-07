@@ -1,9 +1,9 @@
 class RespondentMailer < ApplicationMailer
   def new_question(user)
     recipients = [
-     'general_esrc@esrc-zbp.ru',
-     'kro_esrc@esrc-zbp.ru',
-     'kadry_esrc@esrc-zbp.ru'
+     'general@soczashita-chita.ru',
+     'opsv@soczashita-chita.ru',
+     'kadry@soczashita-chita.ru'
     ]
     @user = user
     @url  = 'http://example.com/login'

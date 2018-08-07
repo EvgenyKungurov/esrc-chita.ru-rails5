@@ -85,17 +85,18 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address:              '192.168.45.203',
-    port:                 25,
-    domain:               'esrc-zbp.ru',
-    user_name:            'kungurov@esrc-zbp.ru',
-    password:             'asdrtyhjk',
+    address:              'smtp.yandex.ru',
+    port:                 465,
+    domain:               'soczashita-chita.ru',
+    user_name:            'general@soczashita-chita.ru',
+    password:             '3k1UO8',
     authentication:       'plain',
-    enable_starttls_auto: false,
-    openssl_verify_mode: 'none'
+    enable_starttls_auto: true,
+    openssl_verify_mode: 'none',
+    tls: true,
   }
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.default_options = { from: 'respondent@esrc-zbp.ru' }
-  Rails.application.routes.default_url_options[:host] = 'esrc-chita.ru'
+  config.action_mailer.default_options = { from: 'general@soczashita-chita.ru' }
+  Rails.application.routes.default_url_options[:host] = 'soczashita-chita.ru'
 end

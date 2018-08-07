@@ -1,7 +1,8 @@
 <div class="row">
   <div class="col-md-4 col-sm-6">
     <div class="alert alert-success" role="alert"><h3 class="center_align">Информация</h3></div>
-      <p>Предложения и замечания по работе сайта просим отправлять на электронный адрес: kungurov@esrc-zbp.ru</p>
+     <p><b><%= link_to 'График личного приема граждан ', aboute_path(8) %></b><br>
+      <p>Предложения и замечания по работе сайта просим отправлять на электронный адрес: general@soczashita-chita.ru</p>
       <hr class="hr_success">
       <p>Для того, чтобы задать вопрос, вам необходимо зайти в личный кабинет.</p>
       <hr class="hr_success">
@@ -13,10 +14,10 @@
 
   <div class="col-md-4 col-sm-6">
     <div class="alert alert-info" role="alert"><h3 class="center_align">Контакты</h3></div>
-      <p> Мы будем рады услышать вас!
-      <%= image_tag("phone-s1.png", :width => '25%') %>
-      Телефон горячей линии по г.Чита и Читинскому району: 21-77-09<br> 
-      Так же вы можете написать обращение на электронный адрес: general_esrc@esrc-zbp.ru <br> или задать вопрос в личном кабинете.</p>
+     <p><b><%= link_to 'Телефоны горячей линии', aboute_path(7) %></b><%= image_tag("phone-s1.png", :width => '25%') %><br>
+     Так же вы можете написать обращение на электронный адрес: general@soczashita-chita.ru <br> или задать вопрос в личном кабинете.</p>
+     <b><%= link_to 'Новости Министерства труда и социальной защиты населения', 'http://минсоц.забайкальскийкрай.рф/news.html', target: "_blank" %></b>
+     <p><b><%= link_to image_tag("banner_uzk2.jpg", :width => '100%'), 'http://минсоц.забайкальскийкрай.рф/usynovlenie_v_zabaykalskom_krae.html', target: "_blank" %></b>
   </div>
 
  <div class="col-md-4 col-sm-6">

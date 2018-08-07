@@ -1,0 +1,11 @@
+<% provide(:title, 'Новости') %>
+
+<div class="row"><div class="alert alert-success" role="alert"><h3 class="center_align">Лента новостей</h3></div></div>
+
+<table>
+  <% @information.each do |elem| %>
+    <div class="date"><%= elem.created_at.localtime.strftime("%d-%m-%Y %H:%M") %></div>
+    <%= link_to elem.title.html_safe, information_path(elem), class: "href" %>
+    <tr></tr>
+  <% end %>
+</table>

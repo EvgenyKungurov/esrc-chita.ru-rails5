@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: "respondent@esrc-chita.ru"
+  default from: "general@soczashita-chita.ru"
   layout 'mailer'
 end
