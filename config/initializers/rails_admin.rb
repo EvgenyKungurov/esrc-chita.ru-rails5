@@ -87,6 +87,7 @@ RailsAdmin.config do |config|
   config.model Servicetext do
     edit do
       field :title
+      field :position
       field :text, :ck_editor
       field :service_id, :enum do
         enum do
@@ -105,12 +106,14 @@ RailsAdmin.config do |config|
   config.model SocialService do
     edit do
       field :name
+      field :position
     end
   end
 
   config.model SocialPost do
     edit do
       field :title
+      field :position
       field :text, :ck_editor
       field :social_service
     end

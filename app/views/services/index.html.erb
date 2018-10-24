@@ -1,7 +1,7 @@
 <% provide(:title, 'Перечень услуг') %>
 <table class="table">
   <div class="row"><div class="alert alert-success" role="alert"><h3 class="center_align">Меры социальной поддержки</h3></div></div>
-  <% @service.each do |elem| %>
+  <% @service.sort_by { |service| service.position.to_i }.each do |elem| %>
       <tr><td><%= link_to  elem.title.html_safe,  service_path(elem), class: "href" %></td>
       </tr>
   <% end %>

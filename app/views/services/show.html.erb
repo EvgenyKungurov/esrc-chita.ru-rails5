@@ -5,7 +5,7 @@
 
   <div class="row">
     <ul id="nav_list_first" class="nav_list">
-     <% @service.sort_by {|x| x.created_at }.each do |elem| %>
+     <% @service.sort_by {|x| x.position.to_i }.each do |elem| %>
         <li><a href="#"><%= elem.title.html_safe %></a>
           <ul>
             <li><a href="#"><%= elem.text.html_safe %> </a></li>
